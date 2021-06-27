@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <a-config-provider :locale="antdLocales">
+      <router-view></router-view>
+    </a-config-provider>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
+<script lang="ts">
+import { defineComponent, computed, onMounted } from "vue"
+// import { antdMessages } from "@/config/i18n";
+// import { setHtmlLang } from "@/utils/i18n";
+// import { useI18n } from "vue-i18n";
+export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  setup() {
+    // const { locale } = useI18n();
+    // const antdLocales = computed(()=> antdMessages[locale.value]);
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    // onMounted(() => {
+    //   setHtmlLang(locale.value);
+    // })
+
+    return {
+      // antdLocales
+    }
+  }
+})
+</script>
